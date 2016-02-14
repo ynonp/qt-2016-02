@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Clicker.qml</file>
+        <file>OnOffSwitch.qml</file>
+    </qresource>
+</RCC>
