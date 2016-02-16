@@ -16,12 +16,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     counter.cpp \
     mylabel.cpp \
-    filechooser.cpp
+    filechooser.cpp \
+    mypainteditem.cpp \
+    lightbulb.cpp
 
 HEADERS  += mainwindow.h \
     counter.h \
     mylabel.h \
-    filechooser.h
+    filechooser.h \
+    mypainteditem.h \
+    lightbulb.h
 
 FORMS    += mainwindow.ui \
     counter.ui \
