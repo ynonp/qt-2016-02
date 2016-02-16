@@ -15,11 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     counter.cpp \
-    mylabel.cpp
+    mylabel.cpp \
+    filechooser.cpp
 
 HEADERS  += mainwindow.h \
     counter.h \
-    mylabel.h
+    mylabel.h \
+    filechooser.h
 
 FORMS    += mainwindow.ui \
-    counter.ui
+    counter.ui \
+    filechooser.ui

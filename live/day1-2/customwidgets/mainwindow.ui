@@ -23,7 +23,7 @@
      </widget>
     </item>
     <item>
-     <widget class="Counter" name="widget_3" native="true"/>
+     <widget class="FileChooser" name="widget_3" native="true"/>
     </item>
     <item>
      <widget class="Counter" name="widget_2" native="true"/>
@@ -56,6 +56,12 @@
    <class>Counter</class>
    <extends>QWidget</extends>
    <header>counter.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FileChooser</class>
+   <extends>QWidget</extends>
+   <header>filechooser.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
