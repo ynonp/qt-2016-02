@@ -1,4 +1,10 @@
 QT += gui widgets
 
+CONFIG += c++11
+
 SOURCES += \
-    main.cpp
+    main.cpp \
+    lab.cpp
+
+HEADERS += \
+    lab.h
