@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>layouts.qml</file>
-        <file>rects.qml</file>
     </qresource>
 </RCC>
+
