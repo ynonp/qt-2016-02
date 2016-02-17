@@ -114,7 +114,7 @@ QString TicTacToeGameEngine::checkWinner(const QString &player)
     {
         return player;
     }
-    else if ((m_data[0] == player) && (m_data[4] == player) && (m_data[7] == player))
+    else if ((m_data[0] == player) && (m_data[4] == player) && (m_data[8] == player))
     {
         return player;
     }
