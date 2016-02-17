@@ -1,9 +1,12 @@
 #include "numbersmodel.h"
 
 NumbersModel::NumbersModel(QObject *parent):
-    QAbstractListModel(parent)
+    QAbstractTableModel(parent)
 {
-
+    for (int i=2; i < 7; i++)
+    {
+        m_items << i;
+    }
 }
 
 
@@ -12,16 +15,20 @@ int NumbersModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
-    return 5;
+    return 4;
 }
 
 QVariant NumbersModel::data(const QModelIndex &index,
                             int role) const
 {
-    qDebug() << "Data!" << index << role;
+    // qDebug() << "Data!" << index << role;
     if (role == Qt::DisplayRole)
-    {
-        return index.row() * 2;
+    {                
+        if (index.row() < m_items.size())
+        {
+            int base = m_items[index.row()];
+            return qPow(base, index.column()+1);
+        }
     }
     else if (role == Qt::BackgroundRole)
     {
@@ -40,7 +47,57 @@ QVariant NumbersModel::data(const QModelIndex &index,
     {
         return QVariant();
     }
+
+    return QVariant();
 }
+
+
+int NumbersModel::columnCount(const QModelIndex &parent) const
+{
+    return 4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bool NumbersModel::setData(const QModelIndex &index, const QVariant &value, int role)
+{
+    if (role == Qt::EditRole)
+    {
+        m_items[index.row()] = value.toInt();
+        return true;
+    }
+
+    return false;
+}
+
+Qt::ItemFlags NumbersModel::flags(const QModelIndex &index) const
+{
+    if (index.column() == 0)
+    {
+        return QAbstractTableModel::flags(index) | Qt::ItemIsEditable;
+    }
+    else
+    {
+        return QAbstractTableModel::flags(index);
+    }
+}
+
+
+
 
 
 

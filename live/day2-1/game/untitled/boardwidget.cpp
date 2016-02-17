@@ -20,6 +20,8 @@ void BoardWidget::setGameEngine(TicTacToeGameEngine *engine)
     QObject::connect(m_engine, SIGNAL(dataChanged(int,int)),
                      this, SLOT(update()));
 
+    QObject::connect(this, SIGNAL(clicked(int,int)),
+                     m_engine, SLOT(play(int,int)));
 
     update();
 }

@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     NumbersModel *model = new NumbersModel(this);
     ui->listView->setModel(model);
+    ui->tableView->setModel(model);
 }
 
 MainWindow::~MainWindow()
