@@ -10,13 +10,26 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     QStandardItemModel *model = new QStandardItemModel(this);
-    QStandardItem *a = new QStandardItem("1");
-    QStandardItem *b = new QStandardItem("2");
-    QStandardItem *c = new QStandardItem("3");
-    QList<QStandardItem *>row;
-    row << a << b << c;
 
-    model->appendRow(row);
+    for (auto i=1; i < 5; i++)
+    {
+        QList<QStandardItem *>row;
+        for (auto j=1; j<5; j++)
+        {
+            auto val = i * j;
+            auto item = new QStandardItem(QString::number(val));
+            item->setEditable(false);
+
+            if (val % 3 == 0)
+            {
+                QVariant yellow;
+                yellow.setValue<QColor>(Qt::yellow);
+                item->setData(yellow, Qt::BackgroundRole);
+            }
+            row << item;
+        }
+        model->appendRow(row);
+    }
 
     QVariant v;
     v.setValue<QColor>(Qt::yellow);
@@ -28,7 +41,6 @@ MainWindow::MainWindow(QWidget *parent) :
     qDebug() << res.value<QColor>();
 
 
-    ui->listView->setModel(model);
     ui->tableView->setModel(model);
 }
 
