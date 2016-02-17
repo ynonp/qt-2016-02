@@ -1,12 +1,14 @@
 #include "numbersmodel.h"
 
 NumbersModel::NumbersModel(QObject *parent):
-    QAbstractTableModel(parent)
+    QAbstractTableModel(parent),
+    m_columnCount(4)
 {
-    for (int i=2; i < 7; i++)
+    for (int i=0; i<5; i++)
     {
-        m_items << i;
+        m_items << i+2;
     }
+
 }
 
 
@@ -15,7 +17,7 @@ int NumbersModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
-    return 4;
+    return m_items.size();
 }
 
 QVariant NumbersModel::data(const QModelIndex &index,
@@ -54,7 +56,16 @@ QVariant NumbersModel::data(const QModelIndex &index,
 
 int NumbersModel::columnCount(const QModelIndex &parent) const
 {
-    return 4;
+    return m_columnCount;
+}
+
+void NumbersModel::setColumnCount(int val)
+{
+    beginResetModel();
+    m_columnCount = val;
+    endResetModel();
+
+
 }
 
 

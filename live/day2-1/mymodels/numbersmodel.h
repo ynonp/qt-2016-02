@@ -20,9 +20,12 @@ public:
     virtual int columnCount(const QModelIndex &parent) const;
 
 
+public slots:
+    void setColumnCount(int val);
+
 private:
     QList<int> m_items;
-
+    int m_columnCount;
     // QAbstractItemModel interface
 public:
     virtual bool setData(const QModelIndex &index, const QVariant &value, int role);
