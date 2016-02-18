@@ -38,7 +38,7 @@ ApplicationWindow {
                 Keys.onReturnPressed: {
                     print("Index Selected: " + index);
                     print("Item Selected: " + value);
-                    selectedValue = value
+                    selectedValue = secret
                 }
             }
         }

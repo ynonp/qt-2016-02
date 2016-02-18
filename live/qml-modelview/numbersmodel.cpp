@@ -10,6 +10,7 @@ QHash<int, QByteArray> NumbersModel::roleNames() const
 {
     QHash<int, QByteArray> roleNames;
     roleNames[Qt::DisplayRole] = "value";
+    roleNames[Qt::UserRole+1] = "secret";
     return roleNames;
 }
 
@@ -27,6 +28,10 @@ QVariant NumbersModel::data(const QModelIndex &index,
     if (role == Qt::DisplayRole)
     {                
         return index.row() * 3;
+    }
+    else if (role == Qt::UserRole+1)
+    {
+        return QString("√ %1").arg(index.row() * 3);
     }
 
     return QVariant();
