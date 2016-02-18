@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="style.qss">styel.qss</file>
+        <file alias="key.png">Key.png</file>
+        <file>app_he.qm</file>
+    </qresource>
+</RCC>

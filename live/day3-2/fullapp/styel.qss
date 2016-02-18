@@ -1,0 +1,8 @@
+QPushButton {
+  background: red;
+}
+
+QLabel {
+  color: green;
+  border: 2px solid purple;
+}
