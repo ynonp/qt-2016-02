@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include "mytask.h"
+#include "counter.h"
+#include "countertask.h"
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -8,14 +11,16 @@ int main(int argc, char *argv[])
 //    MainWindow w;
 //    w.show();
 
-    for (int i=0; i <10; i++)
-    {
-        MyTask *f1 = new MyTask(QString("/tmp/%1").arg(i));
-        QThreadPool::globalInstance()->start(f1);
-    }
+    Counter c;
+    CounterTask *t1 = new CounterTask(c, 1);
+    CounterTask *t2 = new CounterTask(c, -1);
 
+    QThreadPool::globalInstance()->start(t1);
+    QThreadPool::globalInstance()->start(t2);
 
     QThreadPool::globalInstance()->waitForDone();
+
+    qDebug() << "Value = " << c.val();
     return 0;
 
 }
