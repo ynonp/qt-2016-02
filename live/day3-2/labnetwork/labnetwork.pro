@@ -4,17 +4,25 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network quick qml widgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += c++11
 
 TARGET = labnetwork
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    omdbapi.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    omdbapi.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    main.qml
+
+RESOURCES += \
+    main.qrc

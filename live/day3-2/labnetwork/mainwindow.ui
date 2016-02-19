@@ -30,21 +30,21 @@
      </layout>
     </item>
     <item>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="title">
       <property name="text">
        <string>Title: </string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="year">
       <property name="text">
        <string>Year: </string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="img">
       <property name="text">
        <string>Image: </string>
       </property>
